@@ -1,0 +1,119 @@
+Assignment no:
+Title:
+Name:Kolhe Neha Chandrakant
+Roll no:49
+
+#include<iostream.h>
+#include<conio.h>
+class QUEUE_49
+{
+	private :
+		   int *A,s,front,rear;
+	public:
+	   QUEUE_11(int par);
+	   void  QUEUE_ADD_11(int ele);
+	   int QUEUE_DELETE_11();
+	   void LIST_ALL_11();
+
+};
+ QUEUE_49::QUEUE_49 (int par)
+{
+	front=rear=0; s=par;
+	A=new int [s+1];
+}
+void QUEUE_49::QUEUE_ADD_49(int ele)
+{
+   if (rear==s)
+	  {
+		 cout<<"Queue is full";
+		 return;
+	   }
+	   else
+	 if(front==0)
+	 {
+		   front=1;
+	 }
+	 rear=rear+1;
+	 A[rear]=ele;
+}
+
+int QUEUE_49::QUEUE_DELETE_49()
+{
+
+	  if(front==0)
+		{
+			cout<<"Queue is empty"<<endl;
+			return NULL;
+		 }
+		 int ele=A[front];
+		 if(front==rear)
+			front=rear=0;
+		 else
+			front=front+1;
+		  cout<<"Element is deleted"<<ele;
+		 return ele;
+
+}
+
+void QUEUE_49::LIST_ALL_49()
+{
+		cout<<"Queue elements are:"<<endl;
+		   if(front==0)
+		   {
+			  cout<<"\n Queue is empty"<<endl;
+			  return;
+		   }
+		   else
+		   {
+
+			   for(int i=front;i<=rear;i++)
+			   {
+			   cout<<A[i]<<" ";
+			   }
+		   }
+}
+void MENU()
+{
+	 int opt,ele,size;
+	 cout<<"Enter the size of the Queue:";
+	 cin>>size;
+	 QUEUE_11 obj(size);
+	 do
+	 {
+	   cout<<"\n choose to------------";
+	   cout<<"\n 1. QUEUE_ADD_11";
+	   cout<<"\n 2. QUEUE_DELETE_11";
+	   cout<<"\n 3. LIST_ALL";
+	   cout<<"\n 4.Exit";
+	   cout<<"\n Enter your choice:";
+	   cin>>opt;
+	   switch(opt)
+	   {
+		  case 1:
+			  cout<<"\n enter elements add:"<<endl;
+			  cin>>ele;
+			  obj.QUEUE_ADD_49( ele);
+			  break;
+		  case 2:
+			  int ele=obj.QUEUE_DELETE_49();
+			  cout<<endl<<ele<<" is deleted"<<endl;
+			  break;
+		  case 3:
+			  obj.LIST_ALL_49();
+			  break;
+		  case 4:
+			   return;
+		  default:
+			 cout<<"\n Invalid option"<<endl;
+	   }
+
+	  } while(1);
+}
+void  main()
+{
+	   int ele;
+	   clrscr();
+	   MENU();	
+	  getch();
+  }
+
